@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Apple Debate Timer' target in the 'Apple Debate Timer' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
