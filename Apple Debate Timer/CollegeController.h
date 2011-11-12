@@ -11,19 +11,32 @@
 
 #import "DebateTimer.h"
 
-@interface CollegeController : NSViewController <NSWindowDelegate, DebateTimerDelegate>{
+@interface CollegeController : NSWindowController <NSWindowDelegate, DebateTimerDelegate>{
     IBOutlet NSTextField *debateTimerField;
     IBOutlet NSButton *toggleButton;
 
 @private
     DebateTimer *_timer;
+    
+    NSString *convertedTimeString;
+    
+    double _speechTime, _affPrep, _negPrep;
+    
+    
 }
 
-@property (nonatomic, retain)NSString *timeString;
+@property (nonatomic, retain) NSString *convertedTimeString;
+@property double speechTime, affPrep, negPrep;
+
 
 -(IBAction)toggleSpeech:(id)sender;
--(IBAction):(id)sender
 
+-(IBAction)setConstructive:(id)sender;
+-(IBAction)setRebuttal:(id)sender;
+-(IBAction)setCX:(id)sender;
 
+-(NSString *)convertTimeString:(double)speechTime;
+
+-(void)updateTimerField;
 
 @end

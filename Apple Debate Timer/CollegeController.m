@@ -10,42 +10,93 @@
 
 @implementation CollegeController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+@dynamic convertedTimeString;
+
+@synthesize speechTime=_speechTime, affPrep=_affPrep, negPrep=_negPrep;
+
+
+- (void)windowDidLoad{
+    [super windowDidLoad];
+    if (!_timer) {
+        _timer=[[DebateTimer alloc]initWithDelegate:self];
     }
-    return self;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
+-(IBAction)setCX:(id)sender{
+    _timer.speechTime = 180;
+    [debateTimerField setTextColor:[NSColor blackColor]];
+
+    [_timer startTimer];
+}
+
+-(IBAction)setRebuttal:(id)sender{
+    _timer.speechTime = 360;
+    [debateTimerField setTextColor:[NSColor blackColor]];
+
+    [_timer startTimer];
+}
+
+-(IBAction)setConstructive:(id)sender{
+    _timer.speechTime = 540;
+    [debateTimerField setTextColor:[NSColor blackColor]];
+
+    [_timer startTimer];
+}
+
+
+- (void)timerDidUpdate:(DebateTimer *)timer{
+    _speechTime = _timer.speechTime;
+    [self convertTimeString:_timer.speechTime];
+    [self updateTimerField];
+}
+
+
+-(void)updateTimerField{
+
+    [debateTimerField setStringValue:convertedTimeString];
     
-    // Release any cached data, images, etc that aren't in use.
+    if (_speechTime < 30) {
+        [debateTimerField setTextColor:[NSColor redColor]];
+    }
+    if (_speechTime > 30 && _speechTime < 60){
+        [debateTimerField setTextColor:[NSColor blueColor]];
+    }
+
 }
 
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+-(void)toggleSpeech:(id)sender{
+    if ([_timer isRunning]) {
+        [_timer stopTimer];
+        
+        [toggleButton setTitle:@"Start Speech"];
+    }else{
+        [_timer startTimer];
+        
+        [toggleButton setTitle:@"Stop Speech"];
+    }
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+-(NSString *)convertTimeString:(double)speechTime{
+    NSTimeInterval interval = _speechTime;
+        
+    //the system calendar
+    NSCalendar *sysCalendar = [NSCalendar currentCalendar];
+    
+    // Create the NSDates
+    NSDate *date1 = [[NSDate alloc] init];
+    NSDate *date2 = [[NSDate alloc] initWithTimeInterval:interval sinceDate:date1]; 
+    [date1 autorelease];
+    [date2 autorelease];
+    
+    // Get conversion to months, days, hours, minutes
+    unsigned int unitFlags = NSSecondCalendarUnit | NSMinuteCalendarUnit;
+    
+    NSDateComponents *conversionInfo = [sysCalendar components:unitFlags fromDate:date1  toDate:date2  options:0];
+    return convertedTimeString = [NSString stringWithFormat:@"%02ld:%02ld", [conversionInfo minute],[conversionInfo second]];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
+
+
+
 
 @end

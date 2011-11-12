@@ -9,9 +9,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface Apple_Debate_TimerAppDelegate : NSObject <NSApplicationDelegate> {
-    NSWindow *window;
 }
-
-@property (assign) IBOutlet NSWindow *window;
-
 @end

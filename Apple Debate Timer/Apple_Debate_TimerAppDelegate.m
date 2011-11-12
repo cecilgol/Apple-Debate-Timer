@@ -7,14 +7,28 @@
 //
 
 #import "Apple_Debate_TimerAppDelegate.h"
+#import "CollegeController.h"
+
+@interface Apple_Debate_TimerAppDelegate (FirstResponderMethods)
+- (void)newDocument:(id)sender;
+@end
+
 
 @implementation Apple_Debate_TimerAppDelegate
 
-@synthesize window;
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	[self newDocument:self];
+}
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+@end
+
+@implementation Apple_Debate_TimerAppDelegate (FirstResponderMethods)
+
+- (void)newDocument:(id)sender
 {
-    // Insert code here to initialize your application
+	CollegeController *timerWindowController = [[CollegeController alloc] initWithWindowNibName:@"CollegeControllerWindow"];
+	
+	[timerWindowController.window makeKeyAndOrderFront:self];
 }
 
 @end

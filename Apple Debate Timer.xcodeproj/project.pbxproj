@@ -15,6 +15,7 @@
 		E9CDE4D1146EF90900A0D698 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4CF146EF90900A0D698 /* MainMenu.xib */; };
 		E9CDE4D9146EF95800A0D698 /* DebateTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CDE4D8146EF95800A0D698 /* DebateTimer.m */; };
 		E9CDE4E9146F056800A0D698 /* CollegeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CDE4E7146F056800A0D698 /* CollegeController.m */; };
+		E9CDE4EC146F102A00A0D698 /* CollegeControllerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4EB146F102A00A0D698 /* CollegeControllerWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		E9CDE4D8146EF95800A0D698 /* DebateTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebateTimer.m; sourceTree = "<group>"; };
 		E9CDE4E6146F056800A0D698 /* CollegeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeController.h; sourceTree = "<group>"; };
 		E9CDE4E7146F056800A0D698 /* CollegeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeController.m; sourceTree = "<group>"; };
+		E9CDE4EB146F102A00A0D698 /* CollegeControllerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollegeControllerWindow.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +115,8 @@
 		E9CDE4DA146F01E500A0D698 /* DebateTimer */ = {
 			isa = PBXGroup;
 			children = (
-				E9CDE4D8146EF95800A0D698 /* DebateTimer.m */,
 				E9CDE4D7146EF95800A0D698 /* DebateTimer.h */,
+				E9CDE4D8146EF95800A0D698 /* DebateTimer.m */,
 			);
 			name = DebateTimer;
 			sourceTree = "<group>";
@@ -124,6 +126,7 @@
 			children = (
 				E9CDE4E6146F056800A0D698 /* CollegeController.h */,
 				E9CDE4E7146F056800A0D698 /* CollegeController.m */,
+				E9CDE4EB146F102A00A0D698 /* CollegeControllerWindow.xib */,
 			);
 			name = CollegeController;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				E9CDE4C5146EF90800A0D698 /* InfoPlist.strings in Resources */,
 				E9CDE4CB146EF90800A0D698 /* Credits.rtf in Resources */,
 				E9CDE4D1146EF90900A0D698 /* MainMenu.xib in Resources */,
+				E9CDE4EC146F102A00A0D698 /* CollegeControllerWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

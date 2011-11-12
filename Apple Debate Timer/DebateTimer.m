@@ -49,17 +49,18 @@
     return _isRunning;
 }
 
--(void)advanceTimer{
+-(void)advanceTimer:(id)sender{
     _speechTime = (_speechTime-.1);
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(timerDidUpdate:)])
-		[_delegate timerDidUpdate:self];
 
-    if (_speechTime > .1) {
+    if (_delegate && [_delegate respondsToSelector:@selector(timerDidUpdate:)])
+        [_delegate timerDidUpdate:self];
+
+    
+    if (_speechTime < .1) {
         _isRunning = NO;
         [_timer invalidate];
     }
-    
+
 }
 
 
