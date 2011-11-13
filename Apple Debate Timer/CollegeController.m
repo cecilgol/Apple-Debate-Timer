@@ -19,6 +19,8 @@
     [super windowDidLoad];
     if (!_timer) {
         _timer=[[DebateTimer alloc]initWithDelegate:self];
+        _affPrep = 600;
+        _negPrep = 600;
     }
 }
 
@@ -50,10 +52,47 @@
     [self updateTimerField];
 }
 
+-(IBAction)startAffPrep:(id)sender{
+
+    if([_timer isRunning]){
+        [_timer stopTimer];
+        
+        [affPrepRemaining setTitle:[NSString stringWithFormat:@"Aff Prep: %@",[self convertTimeString:_affPrep]]];
+        self.affPrep = _speechTime;
+    
+    }else{
+        _timer.speechTime = self.affPrep;
+        [_timer startTimer];
+        
+        [affPrepRemaining setTitle:@"Stop Prep"];
+    }
+}
+
+-(IBAction)startNegPrep:(id)sender{
+    if([_timer isRunning]){
+        [_timer stopTimer];
+        
+        [negPrepRemaining setTitle:[NSString stringWithFormat:@"Neg Prep: %@",[self convertTimeString:_negPrep]]];
+        self.negPrep = _speechTime;
+        
+    }else{
+        _timer.speechTime = self.negPrep;
+        [_timer startTimer];
+        
+        [negPrepRemaining setTitle:@"Stop Prep"];
+    }
+}
+
+
+
+
+
 
 -(void)updateTimerField{
 
     [debateTimerField setStringValue:convertedTimeString];
+    [toggleButton setTitle:@"Stop Speech"];
+
     
     if (_speechTime < 30) {
         [debateTimerField setTextColor:[NSColor redColor]];
