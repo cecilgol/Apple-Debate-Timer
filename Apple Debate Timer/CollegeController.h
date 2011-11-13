@@ -8,14 +8,13 @@
 
 
 #import <Cocoa/Cocoa.h>
-
 #import "DebateTimer.h"
+#import "Growl/Growl.h"
 
-@interface CollegeController : NSWindowController <NSWindowDelegate, DebateTimerDelegate>{
+@interface CollegeController : NSWindowController <NSWindowDelegate, DebateTimerDelegate, GrowlApplicationBridgeDelegate>{
     IBOutlet NSTextField *debateTimerField;
-    IBOutlet NSButton *toggleButton;
-    IBOutlet NSButton *affPrepRemaining;
-    IBOutlet NSButton *negPrepRemaining;
+    IBOutlet NSButton *toggleButton, *affPrepRemaining, *negPrepRemaining, *setCXButton, *setConstructiveButton, *setRebuttalButton;
+    
 
 @private
     DebateTimer *_timer;
@@ -24,10 +23,12 @@
     
     double _speechTime, _affPrep, _negPrep;
     
+    NSSet *hijackableButtons;
     
 }
 
 @property (nonatomic, retain) NSString *convertedTimeString;
+
 @property double speechTime, affPrep, negPrep;
 
 
@@ -41,7 +42,8 @@
 -(IBAction)startNegPrep:(id)sender;
 
 -(NSString *)convertTimeString:(double)speechTime;
-
 -(void)updateTimerField;
+
+-(NSDictionary *)registrationDictionaryForGrowl;
 
 @end
