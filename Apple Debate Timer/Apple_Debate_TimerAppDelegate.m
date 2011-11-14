@@ -8,29 +8,37 @@
 
 #import "Apple_Debate_TimerAppDelegate.h"
 #import "CollegeController.h"
+#import "HSController.h"
 
 @interface Apple_Debate_TimerAppDelegate (FirstResponderMethods)
-- (void)newDocument:(id)sender;
+-(void)newCollegeDocument:(id)sender;
+-(void)newHSDocument:(id)sender;
 @end
 
 
 @implementation Apple_Debate_TimerAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	[self newDocument:self];
+	[self newCollegeDocument:self];
 }
 
 @end
 
 @implementation Apple_Debate_TimerAppDelegate (FirstResponderMethods)
 
-- (void)newDocument:(id)sender
+- (void)newCollegeDocument:(id)sender
 {
 	CollegeController *timerWindowController = [[CollegeController alloc] initWithWindowNibName:@"CollegeControllerWindow"];
 	
 	[timerWindowController.window makeKeyAndOrderFront:self];
-}
 
+
+}
+-(void)newHSDocument:(id)sender{
+    HSController *hsTimerWindowController = [[HSController alloc] initWithWindowNibName:@"HSControllerWindow"];
+    
+    [hsTimerWindowController.window makeKeyAndOrderFront:self];
+}
 
 
 @end

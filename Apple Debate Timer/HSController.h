@@ -1,22 +1,21 @@
 //
-//  CollegeController.h
+//  HSController.h
 //  Apple Debate Timer
 //
-//  Created by micheal stroud on 11/12/11.
+//  Created by micheal stroud on 11/13/11.
 //  Copyright 2011 UTSA. All rights reserved.
 //
-
 
 #import <Cocoa/Cocoa.h>
 #import "DebateTimer.h"
 #import "Growl/Growl.h"
-#import "AVFoundation/AVAudioPlayer.h"
+#import <AVFoundation/AVAudioPlayer.h>
 
-@interface CollegeController : NSWindowController <NSWindowDelegate, DebateTimerDelegate, GrowlApplicationBridgeDelegate, AVAudioPlayerDelegate>{
+@interface HSController : NSWindowController <NSWindowDelegate, DebateTimerDelegate, GrowlApplicationBridgeDelegate, AVAudioPlayerDelegate>{
     IBOutlet NSTextField *debateTimerField;
     IBOutlet NSButton *toggleButton, *affPrepRemaining, *negPrepRemaining, *setCXButton, *setConstructiveButton, *setRebuttalButton;
     
-
+    
 @private
     DebateTimer *_timer;
     
@@ -49,5 +48,6 @@
 -(void)tossGrowlMessage;
 -(void)timesUpGrowlMessage;
 -(void)timesUpNoise;
+
 
 @end

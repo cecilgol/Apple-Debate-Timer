@@ -1,16 +1,14 @@
 //
-//  CollegeController.m
+//  HSController.m
 //  Apple Debate Timer
 //
-//  Created by micheal stroud on 11/12/11.
+//  Created by micheal stroud on 11/13/11.
 //  Copyright 2011 UTSA. All rights reserved.
 //
 
-#import "CollegeController.h"
+#import "HSController.h"
 
-
-@implementation CollegeController
-
+@implementation HSController
 @dynamic convertedTimeString;
 
 
@@ -21,9 +19,9 @@
     [super windowDidLoad];
     if (!_timer) {
         _timer=[[DebateTimer alloc]initWithDelegate:self];
-        _affPrep = 601;
-        _negPrep = 601;
-
+        _affPrep = 481;
+        _negPrep = 481;
+        
     }
     
     [GrowlApplicationBridge setGrowlDelegate:self];
@@ -44,19 +42,19 @@
         
         [affPrepRemaining setEnabled:YES];
         [negPrepRemaining setEnabled:YES];
-
+        
     }else{
         [_timer startTimer];
         
         [toggleButton setTitle:@"Stop Speech"];
-
+        
         [setConstructiveButton setEnabled:NO];
         [setRebuttalButton setEnabled:NO];
         [setCXButton setEnabled:NO];
         
         [affPrepRemaining setEnabled:NO];
         [negPrepRemaining setEnabled:NO];
-
+        
     }
 }
 
@@ -71,20 +69,20 @@
         
         [setConstructiveButton setEnabled:NO];
         [setRebuttalButton setEnabled:NO];
-
+        
         
         [affPrepRemaining setEnabled:NO];
         [negPrepRemaining setEnabled:NO];
         
     }
- 
+    
 }
 
 -(IBAction)setRebuttal:(id)sender{
     if ([_timer isRunning] == NO) {
-        _timer.speechTime = 361;
+        _timer.speechTime = 301;
         [debateTimerField setTextColor:[NSColor blackColor]];
-
+        
         [_timer startTimer];
         
         [toggleButton setEnabled:YES];
@@ -94,13 +92,13 @@
         
         [affPrepRemaining setEnabled:NO];
         [negPrepRemaining setEnabled:NO];
-
+        
     }
 }
 
 -(IBAction)setConstructive:(id)sender{
     if ([_timer isRunning] == NO) {
-        _timer.speechTime = 541;
+        _timer.speechTime = 481;
         [debateTimerField setTextColor:[NSColor blackColor]];
         
         [_timer startTimer];
@@ -119,10 +117,10 @@
 
 
 -(IBAction)startAffPrep:(id)sender{
-
+    
     if([_timer isRunning]){
         [_timer stopTimer];
-                
+        
         [affPrepRemaining setTitle:[NSString stringWithFormat:@"Aff Prep: %@",[self convertTimeString:_affPrep]]];
         self.affPrep = _speechTime;
         
@@ -132,11 +130,11 @@
         [toggleButton setEnabled:YES];
         
         [negPrepRemaining setEnabled:YES];
-    
+        
     }else{
         _timer.speechTime = self.affPrep;
         [_timer startTimer];
-                
+        
         [toggleButton setEnabled:NO];
         
         [setCXButton setEnabled:NO];
@@ -190,7 +188,7 @@
 
 
 -(void)updateTimerField{
-
+    
     [debateTimerField setStringValue:convertedTimeString];
     [toggleButton setTitle:@"Stop Speech"];
     
@@ -207,7 +205,7 @@
     if (_speechTime > 30 && _speechTime < 60){
         [debateTimerField setTextColor:[NSColor blueColor]];
     }
-    if (_speechTime < .1){
+    if (_speechTime < 1){
         [toggleButton setEnabled:NO];
         [setCXButton setEnabled:YES];
         [setConstructiveButton setEnabled:YES];
@@ -222,7 +220,7 @@
 
 -(NSString *)convertTimeString:(double)speechTime{
     NSTimeInterval interval = _speechTime;
-        
+    
     //the system calendar
     NSCalendar *sysCalendar = [NSCalendar currentCalendar];
     
@@ -239,7 +237,7 @@
     return convertedTimeString = [NSString stringWithFormat:@"%02ld:%02ld", [conversionInfo minute],[conversionInfo second]];
 }
 -(void)tossGrowlMessage{
-        [GrowlApplicationBridge notifyWithTitle:convertedTimeString description:@"Debate Timer!" notificationName:@"timerNotification" iconData:nil priority:1 isSticky:NO clickContext:nil];
+    [GrowlApplicationBridge notifyWithTitle:convertedTimeString description:@"Debate Timer!" notificationName:@"timerNotification" iconData:nil priority:1 isSticky:NO clickContext:nil];
 }
 -(void)timesUpGrowlMessage{
     [GrowlApplicationBridge notifyWithTitle:@"Times UP!" description:@"Debate Timer!" notificationName:@"timerNotification" iconData:nil priority:1 isSticky:NO clickContext:nil];
@@ -270,6 +268,5 @@
     
     [super dealloc];
 }
-
 
 @end

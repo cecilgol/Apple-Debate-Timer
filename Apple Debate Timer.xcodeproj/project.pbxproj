@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E9CDE4BB146EF90800A0D698 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9CDE4BA146EF90800A0D698 /* Cocoa.framework */; };
+		E9282609146F86A1005770CF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9CDE4BA146EF90800A0D698 /* Cocoa.framework */; };
+		E928260B146F86B3005770CF /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E928260A146F86B3005770CF /* Growl.framework */; };
+		E928260E146F8920005770CF /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E928260A146F86B3005770CF /* Growl.framework */; };
+		E9282612147048E5005770CF /* HSController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9282611147048E5005770CF /* HSController.m */; };
+		E9282614147076FE005770CF /* HSControllerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9282613147076FE005770CF /* HSControllerWindow.xib */; };
+		E928261614708221005770CF /* Glass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E928261514708221005770CF /* Glass.aiff */; };
+		E928261814708297005770CF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E928261714708297005770CF /* AVFoundation.framework */; };
+		E928262414709BAD005770CF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E928261E14709BAB005770CF /* Icon.png */; };
 		E9CDE4C5146EF90800A0D698 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4C3146EF90800A0D698 /* InfoPlist.strings */; };
 		E9CDE4C7146EF90800A0D698 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CDE4C6146EF90800A0D698 /* main.m */; };
 		E9CDE4CB146EF90800A0D698 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4C9146EF90800A0D698 /* Credits.rtf */; };
@@ -16,12 +23,30 @@
 		E9CDE4D9146EF95800A0D698 /* DebateTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CDE4D8146EF95800A0D698 /* DebateTimer.m */; };
 		E9CDE4E9146F056800A0D698 /* CollegeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CDE4E7146F056800A0D698 /* CollegeController.m */; };
 		E9CDE4EC146F102A00A0D698 /* CollegeControllerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4EB146F102A00A0D698 /* CollegeControllerWindow.xib */; };
-		E9CDE4EE146F4D4200A0D698 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4ED146F4D4200A0D698 /* icon.png */; };
-		E9CDE4F9146F7C7800A0D698 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9CDE4F8146F7C7800A0D698 /* Growl.framework */; };
 		E9CDE4FB146F80D100A0D698 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4FA146F80D100A0D698 /* Growl Registration Ticket.growlRegDict */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E928260D146F890A005770CF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E928260E146F8920005770CF /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		E928260A146F86B3005770CF /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		E9282610147048E5005770CF /* HSController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSController.h; sourceTree = "<group>"; };
+		E9282611147048E5005770CF /* HSController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSController.m; sourceTree = "<group>"; };
+		E9282613147076FE005770CF /* HSControllerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSControllerWindow.xib; sourceTree = "<group>"; };
+		E928261514708221005770CF /* Glass.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Glass.aiff; sourceTree = "<group>"; };
+		E928261714708297005770CF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundation.framework; sourceTree = "<group>"; };
+		E928261E14709BAB005770CF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		E9CDE4B6146EF90800A0D698 /* Apple Debate Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Apple Debate Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CDE4BA146EF90800A0D698 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E9CDE4BD146EF90800A0D698 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -40,9 +65,6 @@
 		E9CDE4E6146F056800A0D698 /* CollegeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeController.h; sourceTree = "<group>"; };
 		E9CDE4E7146F056800A0D698 /* CollegeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeController.m; sourceTree = "<group>"; };
 		E9CDE4EB146F102A00A0D698 /* CollegeControllerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollegeControllerWindow.xib; sourceTree = "<group>"; };
-		E9CDE4ED146F4D4200A0D698 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		E9CDE4F4146F7A2300A0D698 /* Growl */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = Growl; path = Growl.framework/Versions/A/Growl; sourceTree = "<group>"; };
-		E9CDE4F8146F7C7800A0D698 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		E9CDE4FA146F80D100A0D698 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,19 +73,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9CDE4BB146EF90800A0D698 /* Cocoa.framework in Frameworks */,
-				E9CDE4F9146F7C7800A0D698 /* Growl.framework in Frameworks */,
+				E9282609146F86A1005770CF /* Cocoa.framework in Frameworks */,
+				E928260B146F86B3005770CF /* Growl.framework in Frameworks */,
+				E928261814708297005770CF /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E928260F14704800005770CF /* HSController */ = {
+			isa = PBXGroup;
+			children = (
+				E9282610147048E5005770CF /* HSController.h */,
+				E9282611147048E5005770CF /* HSController.m */,
+				E9282613147076FE005770CF /* HSControllerWindow.xib */,
+			);
+			name = HSController;
+			sourceTree = "<group>";
+		};
 		E9CDE4AB146EF90800A0D698 = {
 			isa = PBXGroup;
 			children = (
-				E9CDE4F4146F7A2300A0D698 /* Growl */,
-				E9CDE4ED146F4D4200A0D698 /* icon.png */,
 				E9CDE4C0146EF90800A0D698 /* Apple Debate Timer */,
 				E9CDE4B9146EF90800A0D698 /* Frameworks */,
 				E9CDE4B7146EF90800A0D698 /* Products */,
@@ -81,7 +112,8 @@
 		E9CDE4B9146EF90800A0D698 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E9CDE4F8146F7C7800A0D698 /* Growl.framework */,
+				E928261714708297005770CF /* AVFoundation.framework */,
+				E928260A146F86B3005770CF /* Growl.framework */,
 				E9CDE4BA146EF90800A0D698 /* Cocoa.framework */,
 				E9CDE4BC146EF90800A0D698 /* Other Frameworks */,
 			);
@@ -112,14 +144,17 @@
 		E9CDE4C1146EF90800A0D698 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				E9CDE4DA146F01E500A0D698 /* DebateTimer */,
+				E928260F14704800005770CF /* HSController */,
 				E9CDE4E5146F04D900A0D698 /* CollegeController */,
+				E9CDE4DA146F01E500A0D698 /* DebateTimer */,
 				E9CDE4C2146EF90800A0D698 /* Apple Debate Timer-Info.plist */,
 				E9CDE4C3146EF90800A0D698 /* InfoPlist.strings */,
+				E928261514708221005770CF /* Glass.aiff */,
 				E9CDE4FA146F80D100A0D698 /* Growl Registration Ticket.growlRegDict */,
 				E9CDE4C6146EF90800A0D698 /* main.m */,
 				E9CDE4C8146EF90800A0D698 /* Apple Debate Timer-Prefix.pch */,
 				E9CDE4C9146EF90800A0D698 /* Credits.rtf */,
+				E928261E14709BAB005770CF /* Icon.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -153,6 +188,7 @@
 				E9CDE4B2146EF90800A0D698 /* Sources */,
 				E9CDE4B3146EF90800A0D698 /* Frameworks */,
 				E9CDE4B4146EF90800A0D698 /* Resources */,
+				E928260D146F890A005770CF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -197,8 +233,10 @@
 				E9CDE4CB146EF90800A0D698 /* Credits.rtf in Resources */,
 				E9CDE4D1146EF90900A0D698 /* MainMenu.xib in Resources */,
 				E9CDE4EC146F102A00A0D698 /* CollegeControllerWindow.xib in Resources */,
-				E9CDE4EE146F4D4200A0D698 /* icon.png in Resources */,
 				E9CDE4FB146F80D100A0D698 /* Growl Registration Ticket.growlRegDict in Resources */,
+				E9282614147076FE005770CF /* HSControllerWindow.xib in Resources */,
+				E928261614708221005770CF /* Glass.aiff in Resources */,
+				E928262414709BAD005770CF /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +251,7 @@
 				E9CDE4CE146EF90800A0D698 /* Apple_Debate_TimerAppDelegate.m in Sources */,
 				E9CDE4D9146EF95800A0D698 /* DebateTimer.m in Sources */,
 				E9CDE4E9146F056800A0D698 /* CollegeController.m in Sources */,
+				E9282612147048E5005770CF /* HSController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +289,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -276,7 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -295,6 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -315,6 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -326,7 +367,9 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Growl.framework/Versions/A\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"VALID_ARCHS[sdk=macosx*]" = "i386 x86_32";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
