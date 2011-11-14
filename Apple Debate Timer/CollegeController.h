@@ -24,7 +24,6 @@
     
     double _speechTime, _affPrep, _negPrep;
     
-    NSSet *hijackableButtons;
     
 }
 

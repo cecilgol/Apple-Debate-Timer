@@ -19,8 +19,8 @@
     [super windowDidLoad];
     if (!_timer) {
         _timer=[[DebateTimer alloc]initWithDelegate:self];
-        _affPrep = 481;
-        _negPrep = 481;
+        _affPrep = 480;
+        _negPrep = 480;
         
     }
     
@@ -60,7 +60,7 @@
 
 -(IBAction)setCX:(id)sender{
     if ([_timer isRunning] == NO) {
-        _timer.speechTime = 181;
+        _timer.speechTime = 180;
         [debateTimerField setTextColor:[NSColor blackColor]];
         
         [_timer startTimer];
@@ -80,7 +80,7 @@
 
 -(IBAction)setRebuttal:(id)sender{
     if ([_timer isRunning] == NO) {
-        _timer.speechTime = 301;
+        _timer.speechTime = 300;
         [debateTimerField setTextColor:[NSColor blackColor]];
         
         [_timer startTimer];
@@ -98,7 +98,7 @@
 
 -(IBAction)setConstructive:(id)sender{
     if ([_timer isRunning] == NO) {
-        _timer.speechTime = 481;
+        _timer.speechTime = 480;
         [debateTimerField setTextColor:[NSColor blackColor]];
         
         [_timer startTimer];

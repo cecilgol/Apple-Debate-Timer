@@ -9,10 +9,10 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>Icon.png</string>
+	<string>Icon.icns</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>Icon.png</string>
+		<string>Icon.icns</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>MSA.${PRODUCT_NAME:rfc1034identifier}</string>

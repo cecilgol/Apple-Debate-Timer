@@ -24,6 +24,8 @@
 		E9CDE4E9146F056800A0D698 /* CollegeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CDE4E7146F056800A0D698 /* CollegeController.m */; };
 		E9CDE4EC146F102A00A0D698 /* CollegeControllerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4EB146F102A00A0D698 /* CollegeControllerWindow.xib */; };
 		E9CDE4FB146F80D100A0D698 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4FA146F80D100A0D698 /* Growl Registration Ticket.growlRegDict */; };
+		E9F864DB1470AC28007899A0 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E9F864DA1470AC28007899A0 /* Icon.icns */; };
+		E9F864DD1470AC42007899A0 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E9F864DC1470AC42007899A0 /* Icon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,6 +68,8 @@
 		E9CDE4E7146F056800A0D698 /* CollegeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeController.m; sourceTree = "<group>"; };
 		E9CDE4EB146F102A00A0D698 /* CollegeControllerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollegeControllerWindow.xib; sourceTree = "<group>"; };
 		E9CDE4FA146F80D100A0D698 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		E9F864DA1470AC28007899A0 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		E9F864DC1470AC42007899A0 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 		E9CDE4AB146EF90800A0D698 = {
 			isa = PBXGroup;
 			children = (
+				E9F864DC1470AC42007899A0 /* Icon.icns */,
 				E9CDE4C0146EF90800A0D698 /* Apple Debate Timer */,
 				E9CDE4B9146EF90800A0D698 /* Frameworks */,
 				E9CDE4B7146EF90800A0D698 /* Products */,
@@ -148,6 +153,7 @@
 				E9CDE4E5146F04D900A0D698 /* CollegeController */,
 				E9CDE4DA146F01E500A0D698 /* DebateTimer */,
 				E9CDE4C2146EF90800A0D698 /* Apple Debate Timer-Info.plist */,
+				E9F864DA1470AC28007899A0 /* Icon.icns */,
 				E9CDE4C3146EF90800A0D698 /* InfoPlist.strings */,
 				E928261514708221005770CF /* Glass.aiff */,
 				E9CDE4FA146F80D100A0D698 /* Growl Registration Ticket.growlRegDict */,
@@ -237,6 +243,8 @@
 				E9282614147076FE005770CF /* HSControllerWindow.xib in Resources */,
 				E928261614708221005770CF /* Glass.aiff in Resources */,
 				E928262414709BAD005770CF /* Icon.png in Resources */,
+				E9F864DB1470AC28007899A0 /* Icon.icns in Resources */,
+				E9F864DD1470AC42007899A0 /* Icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +354,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Growl.framework/Versions/A\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -367,6 +376,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Growl.framework/Versions/A\"",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"VALID_ARCHS[sdk=macosx*]" = "i386 x86_32";
