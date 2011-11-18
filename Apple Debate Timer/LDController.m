@@ -1,16 +1,14 @@
 //
-//  CollegeController.m
+//  LDController.m
 //  Apple Debate Timer
 //
-//  Created by micheal stroud on 11/12/11.
+//  Created by micheal stroud on 11/18/11.
 //  Copyright 2011 UTSA. All rights reserved.
 //
 
-#import "CollegeController.h"
+#import "LDController.h"
 
-
-@implementation CollegeController
-
+@implementation LDController
 @dynamic convertedTimeString;
 
 
@@ -21,9 +19,9 @@
     [super windowDidLoad];
     if (!_timer) {
         _timer=[[DebateTimer alloc]initWithDelegate:self];
-        _affPrep = 600;
-        _negPrep = 600;
-
+        _affPrep = 240;
+        _negPrep = 240;
+        
     }
     
     [GrowlApplicationBridge setGrowlDelegate:self];
@@ -38,25 +36,33 @@
         
         [toggleButton setTitle:@"Start Speech"];
         
-        [setConstructiveButton setEnabled:YES];
-        [setRebuttalButton setEnabled:YES];
         [setCXButton setEnabled:YES];
+        [setACButton setEnabled:YES];
+        [setNCButton setEnabled:YES];
+        [set1ARButton setEnabled:YES];
+        [setNRButton setEnabled:YES];
+        [set2ARButton setEnabled:YES];
+        
         
         [affPrepRemaining setEnabled:YES];
         [negPrepRemaining setEnabled:YES];
-
+        
     }else{
         [_timer startTimer];
         
         [toggleButton setTitle:@"Stop Speech"];
-
-        [setConstructiveButton setEnabled:NO];
-        [setRebuttalButton setEnabled:NO];
+        
         [setCXButton setEnabled:NO];
+        [setACButton setEnabled:NO];
+        [setNCButton setEnabled:NO];
+        [set1ARButton setEnabled:NO];
+        [setNRButton setEnabled:NO];
+
+        [set2ARButton setEnabled:NO];
         
         [affPrepRemaining setEnabled:NO];
         [negPrepRemaining setEnabled:NO];
-
+        
     }
 }
 
@@ -69,81 +75,161 @@
         
         [toggleButton setEnabled:YES];
         
-        [setConstructiveButton setEnabled:NO];
-        [setRebuttalButton setEnabled:NO];
-
+        [setACButton setEnabled:NO];
+        [setNCButton setEnabled:NO];
+        [set1ARButton setEnabled:NO];
+        [setNRButton setEnabled:NO];
+        [set2ARButton setEnabled:NO];
         
         [affPrepRemaining setEnabled:NO];
         [negPrepRemaining setEnabled:NO];
         
     }
- 
+    
 }
 
--(IBAction)setRebuttal:(id)sender{
+-(IBAction)setNC:(id)sender{
+    if ([_timer isRunning] == NO) {
+        _timer.speechTime = 420;
+        [debateTimerField setTextColor:[NSColor blackColor]];
+        
+        [_timer startTimer];
+        
+        [toggleButton setEnabled:YES];
+        
+        [setACButton setEnabled:NO];
+        [set1ARButton setEnabled:NO];
+        [setNRButton setEnabled:NO];
+        [set2ARButton setEnabled:NO];
+        [setCXButton setEnabled:NO];
+        
+        [affPrepRemaining setEnabled:NO];
+        [negPrepRemaining setEnabled:NO];
+        
+    }
+}
+
+-(IBAction)setAC:(id)sender{
     if ([_timer isRunning] == NO) {
         _timer.speechTime = 360;
         [debateTimerField setTextColor:[NSColor blackColor]];
-
+        
         [_timer startTimer];
         
         [toggleButton setEnabled:YES];
         
-        [setConstructiveButton setEnabled:NO];
+        [setNCButton setEnabled:NO];
+        [set1ARButton setEnabled:NO];
+        [setNRButton setEnabled:NO];
+        [set2ARButton setEnabled:NO];
         [setCXButton setEnabled:NO];
         
         [affPrepRemaining setEnabled:NO];
         [negPrepRemaining setEnabled:NO];
-
+        
     }
 }
 
--(IBAction)setConstructive:(id)sender{
+-(IBAction)set1AR:(id)sender{
     if ([_timer isRunning] == NO) {
-        _timer.speechTime = 540;
+        _timer.speechTime = 240;
         [debateTimerField setTextColor:[NSColor blackColor]];
         
         [_timer startTimer];
         
         [toggleButton setEnabled:YES];
         
-        [setCXButton setEnabled:NO];
-        [setRebuttalButton setEnabled:NO];
+        [setACButton setEnabled:NO];
+        [setNCButton setEnabled:NO];
+        [setNRButton setEnabled:NO];
+        [set2ARButton setEnabled:NO];
+        [setCXButton setEnabled:NO];        
         
         [affPrepRemaining setEnabled:NO];
         [negPrepRemaining setEnabled:NO];
         
     }
 }
+
+-(IBAction)setNR:(id)sender{
+    if ([_timer isRunning] == NO) {
+        _timer.speechTime = 360;
+        [debateTimerField setTextColor:[NSColor blackColor]];
+        
+        [_timer startTimer];
+        
+        [toggleButton setEnabled:YES];
+       
+        [setACButton setEnabled:NO];
+        [setNCButton setEnabled:NO];
+        [set1ARButton setEnabled:NO];
+        [set2ARButton setEnabled:NO];
+        [setCXButton setEnabled:NO]; 
+        
+        [affPrepRemaining setEnabled:NO];
+        [negPrepRemaining setEnabled:NO];
+        
+    }
+}
+
+-(IBAction)set2AR:(id)sender{
+    if ([_timer isRunning] == NO) {
+        _timer.speechTime = 180;
+        [debateTimerField setTextColor:[NSColor blackColor]];
+        
+        [_timer startTimer];
+        
+        [toggleButton setEnabled:YES];
+        
+        [setACButton setEnabled:NO];
+        [setNCButton setEnabled:NO];
+        [set1ARButton setEnabled:NO];
+        [setNRButton setEnabled:NO];
+        [setCXButton setEnabled:NO];
+        
+        [affPrepRemaining setEnabled:NO];
+        [negPrepRemaining setEnabled:NO];
+        
+    }
+}
+
 
 
 
 -(IBAction)startAffPrep:(id)sender{
-
+    
     if([_timer isRunning]){
         [_timer stopTimer];
-                
+        
         [affPrepRemaining setTitle:[NSString stringWithFormat:@"Aff Prep: %@",[self convertTimeString:_affPrep]]];
         self.affPrep = _speechTime;
-        
+
         [setCXButton setEnabled:YES];
-        [setConstructiveButton setEnabled:YES];
-        [setRebuttalButton setEnabled:YES];
-        [toggleButton setEnabled:YES];
+        [setACButton setEnabled:YES];
+        [setNCButton setEnabled:YES];
+        [set1ARButton setEnabled:YES];
+        [setNRButton setEnabled:YES];
+        [set2ARButton setEnabled:YES];
         
+        [toggleButton setEnabled:YES];
+
         [negPrepRemaining setEnabled:YES];
-    
+        
     }else{
         _timer.speechTime = self.affPrep;
         [_timer startTimer];
-                
-        [toggleButton setEnabled:NO];
         
+        [toggleButton setEnabled:NO];
+
         [setCXButton setEnabled:NO];
-        [setConstructiveButton setEnabled:NO];
-        [setRebuttalButton setEnabled:NO];
+        [setACButton setEnabled:NO];
+        [setNCButton setEnabled:NO];
+        [set1ARButton setEnabled:NO];
+        [setNRButton setEnabled:NO];
+
+        [set2ARButton setEnabled:NO];
         [toggleButton setEnabled:NO];
-        
+       
         [negPrepRemaining setEnabled:NO];
         
         [affPrepRemaining setTitle:@"Stop Prep"];
@@ -158,8 +244,12 @@
         self.negPrep = _speechTime;
         
         [setCXButton setEnabled:YES];
-        [setConstructiveButton setEnabled:YES];
-        [setRebuttalButton setEnabled:YES];
+        [setACButton setEnabled:YES];
+        [setNCButton setEnabled:YES];
+        [set1ARButton setEnabled:YES];
+        [setNRButton setEnabled:YES];
+        [set2ARButton setEnabled:YES];
+
         [toggleButton setEnabled:YES];
         
         [affPrepRemaining setEnabled:YES];
@@ -167,12 +257,15 @@
     }else{
         _timer.speechTime = self.negPrep;
         [_timer startTimer];
-        
         [setCXButton setEnabled:NO];
-        [setConstructiveButton setEnabled:NO];
-        [setRebuttalButton setEnabled:NO];
+        [setACButton setEnabled:NO];
+        [setNCButton setEnabled:NO];
+        [set1ARButton setEnabled:NO];
+        [setNRButton setEnabled:NO];
+        [set2ARButton setEnabled:NO];
+
         [toggleButton setEnabled:NO];
-        
+
         [affPrepRemaining setEnabled:NO];
         
         
@@ -190,7 +283,7 @@
 
 
 -(void)updateTimerField{
-
+    
     [debateTimerField setStringValue:convertedTimeString];
     [toggleButton setTitle:@"Stop Speech"];
     
@@ -207,11 +300,11 @@
     if (_speechTime > 30 && _speechTime < 60){
         [debateTimerField setTextColor:[NSColor blueColor]];
     }
-    if (_speechTime < .1){
+    if (_speechTime < 1){
         [toggleButton setEnabled:NO];
         [setCXButton setEnabled:YES];
-        [setConstructiveButton setEnabled:YES];
-        [setRebuttalButton setEnabled:YES];
+        [setACButton setEnabled:YES];
+        [setNCButton setEnabled:YES];
         [affPrepRemaining setEnabled:YES];
         [negPrepRemaining setEnabled:YES];
         [self timesUpGrowlMessage];
@@ -222,7 +315,7 @@
 
 -(NSString *)convertTimeString:(double)speechTime{
     NSTimeInterval interval = _speechTime;
-        
+    
     //the system calendar
     NSCalendar *sysCalendar = [NSCalendar currentCalendar];
     
@@ -239,7 +332,7 @@
     return convertedTimeString = [NSString stringWithFormat:@"%02ld:%02ld", [conversionInfo minute],[conversionInfo second]];
 }
 -(void)tossGrowlMessage{
-        [GrowlApplicationBridge notifyWithTitle:convertedTimeString description:@"Debate Timer!" notificationName:@"timerNotification" iconData:nil priority:1 isSticky:NO clickContext:nil];
+    [GrowlApplicationBridge notifyWithTitle:convertedTimeString description:@"Debate Timer!" notificationName:@"timerNotification" iconData:nil priority:1 isSticky:NO clickContext:nil];
 }
 -(void)timesUpGrowlMessage{
     [GrowlApplicationBridge notifyWithTitle:@"Times UP!" description:@"Debate Timer!" notificationName:@"timerNotification" iconData:nil priority:1 isSticky:NO clickContext:nil];
@@ -270,6 +363,5 @@
     
     [super dealloc];
 }
-
 
 @end

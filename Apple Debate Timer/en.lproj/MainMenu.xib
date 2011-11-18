@@ -1878,19 +1878,27 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">newCollegeDocument:</string>
-						<reference key="source" ref="1014"/>
-						<reference key="destination" ref="705341025"/>
-					</object>
-					<int key="connectionID">548</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">newHSDocument:</string>
 						<reference key="source" ref="1014"/>
 						<reference key="destination" ref="146682487"/>
 					</object>
 					<int key="connectionID">549</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">newLDDocument:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="312453266"/>
+					</object>
+					<int key="connectionID">550</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">newCollegeDocument:</string>
+						<reference key="source" ref="1014"/>
+						<reference key="destination" ref="705341025"/>
+					</object>
+					<int key="connectionID">551</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1978,9 +1986,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="705341025"/>
 							<reference ref="146682487"/>
-							<reference ref="312453266"/>
 							<reference ref="544652028"/>
 							<reference ref="54973592"/>
+							<reference ref="312453266"/>
 						</object>
 						<reference key="parent" ref="379814623"/>
 					</object>
@@ -3180,7 +3188,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">549</int>
+			<int key="maxID">551</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3200,7 +3208,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>newCollegeDocument:</string>
-							<string>newHSDocument:</string>
+							<string>newLDDocument:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -3213,7 +3221,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>newCollegeDocument:</string>
-							<string>newHSDocument:</string>
+							<string>newLDDocument:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -3222,7 +3230,7 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
-								<string key="name">newHSDocument:</string>
+								<string key="name">newLDDocument:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>
