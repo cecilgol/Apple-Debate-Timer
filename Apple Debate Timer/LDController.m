@@ -203,7 +203,7 @@
         
         [affPrepRemaining setTitle:[NSString stringWithFormat:@"Aff Prep: %@",[self convertTimeString:_affPrep]]];
         self.affPrep = _speechTime;
-
+        
         [setCXButton setEnabled:YES];
         [setACButton setEnabled:YES];
         [setNCButton setEnabled:YES];
@@ -212,7 +212,8 @@
         [set2ARButton setEnabled:YES];
         
         [toggleButton setEnabled:YES];
-
+        
+        [affPrepRemaining setEnabled:YES];
         [negPrepRemaining setEnabled:YES];
         
     }else{
@@ -301,14 +302,24 @@
         [debateTimerField setTextColor:[NSColor blueColor]];
     }
     if (_speechTime < 1){
-        [toggleButton setEnabled:NO];
         [setCXButton setEnabled:YES];
         [setACButton setEnabled:YES];
         [setNCButton setEnabled:YES];
+        [set1ARButton setEnabled:YES];
+        [setNRButton setEnabled:YES];
+        [set2ARButton setEnabled:YES];
+        
+        [toggleButton setEnabled:YES];
+        
         [affPrepRemaining setEnabled:YES];
         [negPrepRemaining setEnabled:YES];
-        [self timesUpGrowlMessage];
-        [self timesUpNoise];
+        
+        [debateTimerField setTextColor:[NSColor blackColor]];
+        if (mod < 1) {
+            [self timesUpGrowlMessage];
+            [self timesUpNoise];
+
+        }
     }
 }
 

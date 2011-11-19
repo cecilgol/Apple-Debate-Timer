@@ -212,8 +212,14 @@
         [setRebuttalButton setEnabled:YES];
         [affPrepRemaining setEnabled:YES];
         [negPrepRemaining setEnabled:YES];
-        [self timesUpGrowlMessage];
-        [self timesUpNoise];
+
+        [debateTimerField setTextColor:[NSColor blackColor]];
+
+        
+        if (mod < 1){
+            [self timesUpGrowlMessage];
+            [self timesUpNoise];
+        }
     }
 }
 
