@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E909CE671476C50C0005D314 /* LDController.m in Sources */ = {isa = PBXBuildFile; fileRef = E909CE661476C50C0005D314 /* LDController.m */; };
+		E909CE691476C6810005D314 /* LDControllerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E909CE681476C6810005D314 /* LDControllerWindow.xib */; };
+		E9282609146F86A1005770CF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9CDE4BA146EF90800A0D698 /* Cocoa.framework */; };
+		E928260B146F86B3005770CF /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E928260A146F86B3005770CF /* Growl.framework */; };
+		E928260E146F8920005770CF /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E928260A146F86B3005770CF /* Growl.framework */; };
+		E9282612147048E5005770CF /* HSController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9282611147048E5005770CF /* HSController.m */; };
+		E9282614147076FE005770CF /* HSControllerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9282613147076FE005770CF /* HSControllerWindow.xib */; };
+		E928261614708221005770CF /* Glass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = E928261514708221005770CF /* Glass.aiff */; };
+		E928261814708297005770CF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E928261714708297005770CF /* AVFoundation.framework */; };
+		E9CDE4C5146EF90800A0D698 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4C3146EF90800A0D698 /* InfoPlist.strings */; };
+		E9CDE4C7146EF90800A0D698 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CDE4C6146EF90800A0D698 /* main.m */; };
+		E9CDE4CB146EF90800A0D698 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4C9146EF90800A0D698 /* Credits.rtf */; };
+		E9CDE4CE146EF90800A0D698 /* Apple_Debate_TimerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CDE4CD146EF90800A0D698 /* Apple_Debate_TimerAppDelegate.m */; };
+		E9CDE4D1146EF90900A0D698 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4CF146EF90900A0D698 /* MainMenu.xib */; };
+		E9CDE4D9146EF95800A0D698 /* DebateTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CDE4D8146EF95800A0D698 /* DebateTimer.m */; };
+		E9CDE4E9146F056800A0D698 /* CollegeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CDE4E7146F056800A0D698 /* CollegeController.m */; };
+		E9CDE4EC146F102A00A0D698 /* CollegeControllerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4EB146F102A00A0D698 /* CollegeControllerWindow.xib */; };
+		E9CDE4FB146F80D100A0D698 /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = E9CDE4FA146F80D100A0D698 /* Growl Registration Ticket.growlRegDict */; };
+		E9F864DB1470AC28007899A0 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = E9F864DA1470AC28007899A0 /* Icon.icns */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E928260D146F890A005770CF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E928260E146F8920005770CF /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E909CE651476C50C0005D314 /* LDController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LDController.h; sourceTree = "<group>"; };
+		E909CE661476C50C0005D314 /* LDController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LDController.m; sourceTree = "<group>"; };
+		E909CE681476C6810005D314 /* LDControllerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LDControllerWindow.xib; sourceTree = "<group>"; };
+		E928260A146F86B3005770CF /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		E9282610147048E5005770CF /* HSController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSController.h; sourceTree = "<group>"; };
+		E9282611147048E5005770CF /* HSController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSController.m; sourceTree = "<group>"; };
+		E9282613147076FE005770CF /* HSControllerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSControllerWindow.xib; sourceTree = "<group>"; };
+		E928261514708221005770CF /* Glass.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Glass.aiff; sourceTree = "<group>"; };
+		E928261714708297005770CF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVFoundation.framework; sourceTree = "<group>"; };
+		E9CDE4B6146EF90800A0D698 /* Debate Timer for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Debate Timer for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9CDE4BA146EF90800A0D698 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E9CDE4BD146EF90800A0D698 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E9CDE4BE146EF90800A0D698 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E9CDE4BF146EF90800A0D698 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E9CDE4C2146EF90800A0D698 /* Debate Timer for Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Debate Timer for Mac-Info.plist"; sourceTree = "<group>"; };
+		E9CDE4C4146EF90800A0D698 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E9CDE4C6146EF90800A0D698 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E9CDE4C8146EF90800A0D698 /* Apple Debate Timer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Apple Debate Timer-Prefix.pch"; sourceTree = "<group>"; };
+		E9CDE4CA146EF90800A0D698 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E9CDE4CC146EF90800A0D698 /* Apple_Debate_TimerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Apple_Debate_TimerAppDelegate.h; sourceTree = "<group>"; };
+		E9CDE4CD146EF90800A0D698 /* Apple_Debate_TimerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Apple_Debate_TimerAppDelegate.m; sourceTree = "<group>"; };
+		E9CDE4D0146EF90900A0D698 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E9CDE4D7146EF95800A0D698 /* DebateTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebateTimer.h; sourceTree = "<group>"; };
+		E9CDE4D8146EF95800A0D698 /* DebateTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebateTimer.m; sourceTree = "<group>"; };
+		E9CDE4E6146F056800A0D698 /* CollegeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeController.h; sourceTree = "<group>"; };
+		E9CDE4E7146F056800A0D698 /* CollegeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeController.m; sourceTree = "<group>"; };
+		E9CDE4EB146F102A00A0D698 /* CollegeControllerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollegeControllerWindow.xib; sourceTree = "<group>"; };
+		E9CDE4FA146F80D100A0D698 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
+		E9F864DA1470AC28007899A0 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E9CDE4B3146EF90800A0D698 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9282609146F86A1005770CF /* Cocoa.framework in Frameworks */,
+				E928260B146F86B3005770CF /* Growl.framework in Frameworks */,
+				E928261814708297005770CF /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E909CE631476C4E30005D314 /* LDController */ = {
+			isa = PBXGroup;
+			children = (
+				E909CE651476C50C0005D314 /* LDController.h */,
+				E909CE661476C50C0005D314 /* LDController.m */,
+				E909CE681476C6810005D314 /* LDControllerWindow.xib */,
+			);
+			name = LDController;
+			sourceTree = "<group>";
+		};
+		E928260F14704800005770CF /* HSController */ = {
+			isa = PBXGroup;
+			children = (
+				E9282610147048E5005770CF /* HSController.h */,
+				E9282611147048E5005770CF /* HSController.m */,
+				E9282613147076FE005770CF /* HSControllerWindow.xib */,
+			);
+			name = HSController;
+			sourceTree = "<group>";
+		};
+		E9CDE4AB146EF90800A0D698 = {
+			isa = PBXGroup;
+			children = (
+				E9CDE4C0146EF90800A0D698 /* Apple Debate Timer */,
+				E9CDE4B9146EF90800A0D698 /* Frameworks */,
+				E9CDE4B7146EF90800A0D698 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E9CDE4B7146EF90800A0D698 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9CDE4B6146EF90800A0D698 /* Debate Timer for Mac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9CDE4B9146EF90800A0D698 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E928261714708297005770CF /* AVFoundation.framework */,
+				E928260A146F86B3005770CF /* Growl.framework */,
+				E9CDE4BA146EF90800A0D698 /* Cocoa.framework */,
+				E9CDE4BC146EF90800A0D698 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9CDE4BC146EF90800A0D698 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9CDE4BD146EF90800A0D698 /* AppKit.framework */,
+				E9CDE4BE146EF90800A0D698 /* CoreData.framework */,
+				E9CDE4BF146EF90800A0D698 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E9CDE4C0146EF90800A0D698 /* Apple Debate Timer */ = {
+			isa = PBXGroup;
+			children = (
+				E9CDE4CC146EF90800A0D698 /* Apple_Debate_TimerAppDelegate.h */,
+				E9CDE4CD146EF90800A0D698 /* Apple_Debate_TimerAppDelegate.m */,
+				E9CDE4CF146EF90900A0D698 /* MainMenu.xib */,
+				E9CDE4C1146EF90800A0D698 /* Supporting Files */,
+			);
+			path = "Apple Debate Timer";
+			sourceTree = "<group>";
+		};
+		E9CDE4C1146EF90800A0D698 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E909CE631476C4E30005D314 /* LDController */,
+				E928260F14704800005770CF /* HSController */,
+				E9CDE4E5146F04D900A0D698 /* CollegeController */,
+				E9CDE4DA146F01E500A0D698 /* DebateTimer */,
+				E9CDE4C2146EF90800A0D698 /* Debate Timer for Mac-Info.plist */,
+				E9F864DA1470AC28007899A0 /* Icon.icns */,
+				E9CDE4C3146EF90800A0D698 /* InfoPlist.strings */,
+				E928261514708221005770CF /* Glass.aiff */,
+				E9CDE4FA146F80D100A0D698 /* Growl Registration Ticket.growlRegDict */,
+				E9CDE4C6146EF90800A0D698 /* main.m */,
+				E9CDE4C8146EF90800A0D698 /* Apple Debate Timer-Prefix.pch */,
+				E9CDE4C9146EF90800A0D698 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9CDE4DA146F01E500A0D698 /* DebateTimer */ = {
+			isa = PBXGroup;
+			children = (
+				E9CDE4D7146EF95800A0D698 /* DebateTimer.h */,
+				E9CDE4D8146EF95800A0D698 /* DebateTimer.m */,
+			);
+			name = DebateTimer;
+			sourceTree = "<group>";
+		};
+		E9CDE4E5146F04D900A0D698 /* CollegeController */ = {
+			isa = PBXGroup;
+			children = (
+				E9CDE4E6146F056800A0D698 /* CollegeController.h */,
+				E9CDE4E7146F056800A0D698 /* CollegeController.m */,
+				E9CDE4EB146F102A00A0D698 /* CollegeControllerWindow.xib */,
+			);
+			name = CollegeController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E9CDE4B5146EF90800A0D698 /* Debate Timer for Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9CDE4D4146EF90900A0D698 /* Build configuration list for PBXNativeTarget "Debate Timer for Mac" */;
+			buildPhases = (
+				E9CDE4B2146EF90800A0D698 /* Sources */,
+				E9CDE4B3146EF90800A0D698 /* Frameworks */,
+				E9CDE4B4146EF90800A0D698 /* Resources */,
+				E928260D146F890A005770CF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Debate Timer for Mac";
+			productName = "Apple Debate Timer";
+			productReference = E9CDE4B6146EF90800A0D698 /* Debate Timer for Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9CDE4AD146EF90800A0D698 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = UTSA;
+			};
+			buildConfigurationList = E9CDE4B0146EF90800A0D698 /* Build configuration list for PBXProject "Debate Timer for Mac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E9CDE4AB146EF90800A0D698;
+			productRefGroup = E9CDE4B7146EF90800A0D698 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E9CDE4B5146EF90800A0D698 /* Debate Timer for Mac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E9CDE4B4146EF90800A0D698 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9CDE4C5146EF90800A0D698 /* InfoPlist.strings in Resources */,
+				E9CDE4CB146EF90800A0D698 /* Credits.rtf in Resources */,
+				E9CDE4D1146EF90900A0D698 /* MainMenu.xib in Resources */,
+				E9CDE4EC146F102A00A0D698 /* CollegeControllerWindow.xib in Resources */,
+				E9CDE4FB146F80D100A0D698 /* Growl Registration Ticket.growlRegDict in Resources */,
+				E9282614147076FE005770CF /* HSControllerWindow.xib in Resources */,
+				E928261614708221005770CF /* Glass.aiff in Resources */,
+				E9F864DB1470AC28007899A0 /* Icon.icns in Resources */,
+				E909CE691476C6810005D314 /* LDControllerWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E9CDE4B2146EF90800A0D698 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9CDE4C7146EF90800A0D698 /* main.m in Sources */,
+				E9CDE4CE146EF90800A0D698 /* Apple_Debate_TimerAppDelegate.m in Sources */,
+				E9CDE4D9146EF95800A0D698 /* DebateTimer.m in Sources */,
+				E9CDE4E9146F056800A0D698 /* CollegeController.m in Sources */,
+				E9282612147048E5005770CF /* HSController.m in Sources */,
+				E909CE671476C50C0005D314 /* LDController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E9CDE4C3146EF90800A0D698 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9CDE4C4146EF90800A0D698 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E9CDE4C9146EF90800A0D698 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9CDE4CA146EF90800A0D698 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		E9CDE4CF146EF90900A0D698 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9CDE4D0146EF90900A0D698 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E9CDE4D2146EF90900A0D698 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E9CDE4D3146EF90900A0D698 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E9CDE4D5146EF90900A0D698 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Apple Debate Timer/Apple Debate Timer-Prefix.pch";
+				INFOPLIST_FILE = "Apple Debate Timer/Debate Timer for Mac-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Growl.framework/Versions/A\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "Debate Timer for Mac";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E9CDE4D6146EF90900A0D698 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Apple Debate Timer/Apple Debate Timer-Prefix.pch";
+				INFOPLIST_FILE = "Apple Debate Timer/Debate Timer for Mac-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Growl.framework/Versions/A\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Debate Timer for Mac";
+				"VALID_ARCHS[sdk=macosx*]" = "i386 x86_32";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9CDE4B0146EF90800A0D698 /* Build configuration list for PBXProject "Debate Timer for Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9CDE4D2146EF90900A0D698 /* Debug */,
+				E9CDE4D3146EF90900A0D698 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9CDE4D4146EF90900A0D698 /* Build configuration list for PBXNativeTarget "Debate Timer for Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9CDE4D5146EF90900A0D698 /* Debug */,
+				E9CDE4D6146EF90900A0D698 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E9CDE4AD146EF90800A0D698 /* Project object */;
+}
