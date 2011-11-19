@@ -205,24 +205,24 @@
     if (_speechTime > 30 && _speechTime < 60){
         [debateTimerField setTextColor:[NSColor blueColor]];
     }
-    if (_speechTime < 1){
+    if (_speechTime < .1){
         [toggleButton setEnabled:NO];
         [setCXButton setEnabled:YES];
         [setConstructiveButton setEnabled:YES];
         [setRebuttalButton setEnabled:YES];
         [affPrepRemaining setEnabled:YES];
         [negPrepRemaining setEnabled:YES];
-
+        
         [debateTimerField setTextColor:[NSColor blackColor]];
-
         
         if (mod < 1){
             [self timesUpGrowlMessage];
-            [self timesUpNoise];
+            for (int i = 0; i < 10; i++) {
+                [self timesUpNoise];
+            }
         }
     }
 }
-
 
 -(NSString *)convertTimeString:(double)speechTime{
     NSTimeInterval interval = _speechTime;

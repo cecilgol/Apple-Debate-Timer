@@ -315,14 +315,14 @@
         [negPrepRemaining setEnabled:YES];
         
         [debateTimerField setTextColor:[NSColor blackColor]];
-        if (mod < 1) {
+        if (mod < 1){
             [self timesUpGrowlMessage];
-            [self timesUpNoise];
-
+            for (int i = 0; i < 10; i++) {
+                [self timesUpNoise];
+            }
         }
     }
 }
-
 
 -(NSString *)convertTimeString:(double)speechTime{
     NSTimeInterval interval = _speechTime;
