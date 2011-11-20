@@ -48,7 +48,7 @@
 
 -(IBAction)setCX:(id)sender{
     if ([_timer isRunning] == NO) {
-        _timer.speechTime = 3;
+        _timer.speechTime = 180;
         [debateTimerField setTextColor:[NSColor blackColor]];
         
         [_timer startTimer];
@@ -176,7 +176,7 @@
              
         if (mod < 1){
             [Utilities timesUpGrowlMessage];
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 3; i++) {
                 [Utilities timesUpNoise];
             }
         }

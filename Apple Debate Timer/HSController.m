@@ -174,7 +174,7 @@
         
         if (mod < 1){
             [Utilities timesUpGrowlMessage];
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 3; i++) {
                 [Utilities timesUpNoise];
             }
         }
