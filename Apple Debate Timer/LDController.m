@@ -152,6 +152,8 @@
         
     }else{
         _timer.speechTime = self.affPrep;
+        [debateTimerField setTextColor:[NSColor blackColor]];
+
         [_timer startTimer];
         
         [self hijackButtons];
@@ -172,6 +174,8 @@
         
     }else{
         _timer.speechTime = self.negPrep;
+        [debateTimerField setTextColor:[NSColor blackColor]];
+        
         [_timer startTimer];
         
         [self hijackButtons];
