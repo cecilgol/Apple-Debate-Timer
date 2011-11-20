@@ -12,7 +12,7 @@
 @dynamic convertedTimeString;
 
 
-@synthesize speechTime=_speechTime, affPrep=_affPrep, negPrep=_negPrep;
+@synthesize speechTime=_speechTime, affPrep=_affPrep, negPrep=_negPrep, hijackableButtons=_hijackableButtons;
 
 
 - (void)windowDidLoad{
@@ -21,11 +21,12 @@
         _timer=[[DebateTimer alloc]initWithDelegate:self];
         _affPrep = 240;
         _negPrep = 240;
-        
     }
     
     [GrowlApplicationBridge setGrowlDelegate:self];
     [self registrationDictionaryForGrowl];
+    
+    self.hijackableButtons = [NSArray arrayWithObjects:setACButton, setNCButton, set1ARButton, setNRButton, set2ARButton, nil];
     
     [toggleButton setEnabled:NO];
     
@@ -36,33 +37,14 @@
         
         [toggleButton setTitle:@"Start Speech"];
         
-        [setCXButton setEnabled:YES];
-        [setACButton setEnabled:YES];
-        [setNCButton setEnabled:YES];
-        [set1ARButton setEnabled:YES];
-        [setNRButton setEnabled:YES];
-        [set2ARButton setEnabled:YES];
-        
-        
-        [affPrepRemaining setEnabled:YES];
-        [negPrepRemaining setEnabled:YES];
+        [self releaseButtons];
         
     }else{
         [_timer startTimer];
         
         [toggleButton setTitle:@"Stop Speech"];
         
-        [setCXButton setEnabled:NO];
-        [setACButton setEnabled:NO];
-        [setNCButton setEnabled:NO];
-        [set1ARButton setEnabled:NO];
-        [setNRButton setEnabled:NO];
-
-        [set2ARButton setEnabled:NO];
-        
-        [affPrepRemaining setEnabled:NO];
-        [negPrepRemaining setEnabled:NO];
-        
+        [self hijackButtons];
     }
 }
 
@@ -72,18 +54,12 @@
         [debateTimerField setTextColor:[NSColor blackColor]];
         
         [_timer startTimer];
+
+        [self hijackButtons];
         
         [toggleButton setEnabled:YES];
         
-        [setACButton setEnabled:NO];
-        [setNCButton setEnabled:NO];
-        [set1ARButton setEnabled:NO];
-        [setNRButton setEnabled:NO];
-        [set2ARButton setEnabled:NO];
-        
-        [affPrepRemaining setEnabled:NO];
-        [negPrepRemaining setEnabled:NO];
-        
+        [sender setEnabled:YES];
     }
     
 }
@@ -94,17 +70,12 @@
         [debateTimerField setTextColor:[NSColor blackColor]];
         
         [_timer startTimer];
+
+        [self hijackButtons];
         
         [toggleButton setEnabled:YES];
         
-        [setACButton setEnabled:NO];
-        [set1ARButton setEnabled:NO];
-        [setNRButton setEnabled:NO];
-        [set2ARButton setEnabled:NO];
-        [setCXButton setEnabled:NO];
-        
-        [affPrepRemaining setEnabled:NO];
-        [negPrepRemaining setEnabled:NO];
+        [sender setEnabled:YES];
         
     }
 }
@@ -116,16 +87,11 @@
         
         [_timer startTimer];
         
+        [self hijackButtons];
+        
         [toggleButton setEnabled:YES];
         
-        [setNCButton setEnabled:NO];
-        [set1ARButton setEnabled:NO];
-        [setNRButton setEnabled:NO];
-        [set2ARButton setEnabled:NO];
-        [setCXButton setEnabled:NO];
-        
-        [affPrepRemaining setEnabled:NO];
-        [negPrepRemaining setEnabled:NO];
+        [sender setEnabled:YES];
         
     }
 }
@@ -137,16 +103,11 @@
         
         [_timer startTimer];
         
+        [self hijackButtons];
+        
         [toggleButton setEnabled:YES];
         
-        [setACButton setEnabled:NO];
-        [setNCButton setEnabled:NO];
-        [setNRButton setEnabled:NO];
-        [set2ARButton setEnabled:NO];
-        [setCXButton setEnabled:NO];        
-        
-        [affPrepRemaining setEnabled:NO];
-        [negPrepRemaining setEnabled:NO];
+        [sender setEnabled:YES];
         
     }
 }
@@ -158,16 +119,11 @@
         
         [_timer startTimer];
         
-        [toggleButton setEnabled:YES];
-       
-        [setACButton setEnabled:NO];
-        [setNCButton setEnabled:NO];
-        [set1ARButton setEnabled:NO];
-        [set2ARButton setEnabled:NO];
-        [setCXButton setEnabled:NO]; 
+        [self hijackButtons];
         
-        [affPrepRemaining setEnabled:NO];
-        [negPrepRemaining setEnabled:NO];
+        [toggleButton setEnabled:YES];
+
+        [sender setEnabled:YES];
         
     }
 }
@@ -179,20 +135,13 @@
         
         [_timer startTimer];
         
+        [self hijackButtons];
+        
         [toggleButton setEnabled:YES];
         
-        [setACButton setEnabled:NO];
-        [setNCButton setEnabled:NO];
-        [set1ARButton setEnabled:NO];
-        [setNRButton setEnabled:NO];
-        [setCXButton setEnabled:NO];
-        
-        [affPrepRemaining setEnabled:NO];
-        [negPrepRemaining setEnabled:NO];
-        
+        [sender setEnabled:YES];
     }
 }
-
 
 
 
@@ -204,36 +153,16 @@
         [affPrepRemaining setTitle:[NSString stringWithFormat:@"Aff Prep: %@",[self convertTimeString:_affPrep]]];
         self.affPrep = _speechTime;
         
-        [setCXButton setEnabled:YES];
-        [setACButton setEnabled:YES];
-        [setNCButton setEnabled:YES];
-        [set1ARButton setEnabled:YES];
-        [setNRButton setEnabled:YES];
-        [set2ARButton setEnabled:YES];
-        
-        [toggleButton setEnabled:YES];
-        
-        [affPrepRemaining setEnabled:YES];
-        [negPrepRemaining setEnabled:YES];
+        [self releaseButtons];
         
     }else{
         _timer.speechTime = self.affPrep;
         [_timer startTimer];
         
-        [toggleButton setEnabled:NO];
-
-        [setCXButton setEnabled:NO];
-        [setACButton setEnabled:NO];
-        [setNCButton setEnabled:NO];
-        [set1ARButton setEnabled:NO];
-        [setNRButton setEnabled:NO];
-
-        [set2ARButton setEnabled:NO];
-        [toggleButton setEnabled:NO];
-       
-        [negPrepRemaining setEnabled:NO];
+        [self hijackButtons];
         
-        [affPrepRemaining setTitle:@"Stop Prep"];
+        [sender setTitle:@"Stop Prep"];
+        [sender setEnabled:YES];
     }
 }
 
@@ -244,33 +173,16 @@
         [negPrepRemaining setTitle:[NSString stringWithFormat:@"Neg Prep: %@",[self convertTimeString:_negPrep]]];
         self.negPrep = _speechTime;
         
-        [setCXButton setEnabled:YES];
-        [setACButton setEnabled:YES];
-        [setNCButton setEnabled:YES];
-        [set1ARButton setEnabled:YES];
-        [setNRButton setEnabled:YES];
-        [set2ARButton setEnabled:YES];
-
-        [toggleButton setEnabled:YES];
-        
-        [affPrepRemaining setEnabled:YES];
+        [self releaseButtons];
         
     }else{
         _timer.speechTime = self.negPrep;
         [_timer startTimer];
-        [setCXButton setEnabled:NO];
-        [setACButton setEnabled:NO];
-        [setNCButton setEnabled:NO];
-        [set1ARButton setEnabled:NO];
-        [setNRButton setEnabled:NO];
-        [set2ARButton setEnabled:NO];
-
-        [toggleButton setEnabled:NO];
-
-        [affPrepRemaining setEnabled:NO];
         
+        [self hijackButtons];
         
-        [negPrepRemaining setTitle:@"Stop Prep"];
+        [sender setTitle:@"Stop Prep"];
+        [sender setEnabled:YES];
     }
 }
 
@@ -301,20 +213,13 @@
     if (_speechTime > 30 && _speechTime < 60){
         [debateTimerField setTextColor:[NSColor blueColor]];
     }
-    if (_speechTime < 1){
-        [setCXButton setEnabled:YES];
-        [setACButton setEnabled:YES];
-        [setNCButton setEnabled:YES];
-        [set1ARButton setEnabled:YES];
-        [setNRButton setEnabled:YES];
-        [set2ARButton setEnabled:YES];
+    if (_speechTime < .1){
+        [toggleButton setEnabled:NO];
         
-        [toggleButton setEnabled:YES];
-        
-        [affPrepRemaining setEnabled:YES];
-        [negPrepRemaining setEnabled:YES];
+        [self releaseButtons];        
         
         [debateTimerField setTextColor:[NSColor blackColor]];
+        
         if (mod < 1){
             [self timesUpGrowlMessage];
             for (int i = 0; i < 10; i++) {
@@ -323,6 +228,7 @@
         }
     }
 }
+
 
 -(NSString *)convertTimeString:(double)speechTime{
     NSTimeInterval interval = _speechTime;
@@ -362,15 +268,28 @@
                             [NSURL fileURLWithPath:path] error:NULL];
     audio.delegate = self;
     [audio play];
+    [audio autorelease];
     
+}
+
+-(void)hijackButtons{
+    [_hijackableButtons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj setEnabled:NO];
+    }];
+}
+
+
+-(void)releaseButtons{
+    [_hijackableButtons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj setEnabled:YES];
+    }];
 }
 
 
 
 -(void)dealloc{
     [_timer release];
-//    [hijackableButtons dealloc];
-    [AVAudioPlayer release];
+    [_hijackableButtons dealloc];
     
     [super dealloc];
 }

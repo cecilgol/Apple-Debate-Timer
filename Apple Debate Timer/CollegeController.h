@@ -16,6 +16,7 @@
     IBOutlet NSTextField *debateTimerField;
     IBOutlet NSButton *toggleButton, *affPrepRemaining, *negPrepRemaining, *setCXButton, *setConstructiveButton, *setRebuttalButton;
     
+    
 
 @private
     DebateTimer *_timer;
@@ -24,12 +25,18 @@
     
     double _speechTime, _affPrep, _negPrep;
     
+    NSArray *_hijackableButtons;
+
     
 }
 
 @property (nonatomic, retain) NSString *convertedTimeString;
 
+@property (nonatomic, retain) IBOutlet NSArray *hijackableButtons;
+
 @property double speechTime, affPrep, negPrep;
+
+
 
 
 -(IBAction)toggleSpeech:(id)sender;
@@ -48,5 +55,8 @@
 -(void)tossGrowlMessage;
 -(void)timesUpGrowlMessage;
 -(void)timesUpNoise;
+
+-(void)hijackButtons;
+-(void)releaseButtons;
 
 @end

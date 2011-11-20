@@ -12,7 +12,7 @@
 @dynamic convertedTimeString;
 
 
-@synthesize speechTime=_speechTime, affPrep=_affPrep, negPrep=_negPrep;
+@synthesize speechTime=_speechTime, affPrep=_affPrep, negPrep=_negPrep, hijackableButtons=_hijackableButtons;
 
 
 - (void)windowDidLoad{
@@ -27,6 +27,9 @@
     [GrowlApplicationBridge setGrowlDelegate:self];
     [self registrationDictionaryForGrowl];
     
+    self.hijackableButtons = [NSArray arrayWithObjects:setCXButton,setConstructiveButton,setRebuttalButton,affPrepRemaining,negPrepRemaining, nil];
+    
+    
     [toggleButton setEnabled:NO];
     
 }
@@ -36,25 +39,13 @@
         
         [toggleButton setTitle:@"Start Speech"];
         
-        [setConstructiveButton setEnabled:YES];
-        [setRebuttalButton setEnabled:YES];
-        [setCXButton setEnabled:YES];
-        
-        [affPrepRemaining setEnabled:YES];
-        [negPrepRemaining setEnabled:YES];
-        
+        [self releaseButtons];
     }else{
         [_timer startTimer];
         
         [toggleButton setTitle:@"Stop Speech"];
         
-        [setConstructiveButton setEnabled:NO];
-        [setRebuttalButton setEnabled:NO];
-        [setCXButton setEnabled:NO];
-        
-        [affPrepRemaining setEnabled:NO];
-        [negPrepRemaining setEnabled:NO];
-        
+        [self hijackButtons];
     }
 }
 
@@ -65,17 +56,12 @@
         
         [_timer startTimer];
         
+        [self hijackButtons];
+        
         [toggleButton setEnabled:YES];
         
-        [setConstructiveButton setEnabled:NO];
-        [setRebuttalButton setEnabled:NO];
-        
-        
-        [affPrepRemaining setEnabled:NO];
-        [negPrepRemaining setEnabled:NO];
-        
+        [sender setEnabled:YES];
     }
-    
 }
 
 -(IBAction)setRebuttal:(id)sender{
@@ -85,14 +71,11 @@
         
         [_timer startTimer];
         
+        [self hijackButtons];
+        
         [toggleButton setEnabled:YES];
         
-        [setConstructiveButton setEnabled:NO];
-        [setCXButton setEnabled:NO];
-        
-        [affPrepRemaining setEnabled:NO];
-        [negPrepRemaining setEnabled:NO];
-        
+        [sender setEnabled:YES];
     }
 }
 
@@ -103,14 +86,11 @@
         
         [_timer startTimer];
         
+        [self hijackButtons];
+        
         [toggleButton setEnabled:YES];
         
-        [setCXButton setEnabled:NO];
-        [setRebuttalButton setEnabled:NO];
-        
-        [affPrepRemaining setEnabled:NO];
-        [negPrepRemaining setEnabled:NO];
-        
+        [sender setEnabled:YES];
     }
 }
 
@@ -124,27 +104,16 @@
         [affPrepRemaining setTitle:[NSString stringWithFormat:@"Aff Prep: %@",[self convertTimeString:_affPrep]]];
         self.affPrep = _speechTime;
         
-        [setCXButton setEnabled:YES];
-        [setConstructiveButton setEnabled:YES];
-        [setRebuttalButton setEnabled:YES];
-        [toggleButton setEnabled:YES];
-        
-        [negPrepRemaining setEnabled:YES];
+        [self releaseButtons];
         
     }else{
         _timer.speechTime = self.affPrep;
         [_timer startTimer];
         
-        [toggleButton setEnabled:NO];
+        [self hijackButtons];
         
-        [setCXButton setEnabled:NO];
-        [setConstructiveButton setEnabled:NO];
-        [setRebuttalButton setEnabled:NO];
-        [toggleButton setEnabled:NO];
-        
-        [negPrepRemaining setEnabled:NO];
-        
-        [affPrepRemaining setTitle:@"Stop Prep"];
+        [sender setTitle:@"Stop Prep"];
+        [sender setEnabled:YES];
     }
 }
 
@@ -155,30 +124,18 @@
         [negPrepRemaining setTitle:[NSString stringWithFormat:@"Neg Prep: %@",[self convertTimeString:_negPrep]]];
         self.negPrep = _speechTime;
         
-        [setCXButton setEnabled:YES];
-        [setConstructiveButton setEnabled:YES];
-        [setRebuttalButton setEnabled:YES];
-        [toggleButton setEnabled:YES];
-        
-        [affPrepRemaining setEnabled:YES];
+        [self releaseButtons];
         
     }else{
         _timer.speechTime = self.negPrep;
         [_timer startTimer];
         
-        [setCXButton setEnabled:NO];
-        [setConstructiveButton setEnabled:NO];
-        [setRebuttalButton setEnabled:NO];
-        [toggleButton setEnabled:NO];
+        [self hijackButtons];
         
-        [affPrepRemaining setEnabled:NO];
-        
-        
-        [negPrepRemaining setTitle:@"Stop Prep"];
+        [sender setTitle:@"Stop Prep"];
+        [sender setEnabled:YES];
     }
 }
-
-
 
 - (void)timerDidUpdate:(DebateTimer *)timer{
     _speechTime = _timer.speechTime;
@@ -206,12 +163,9 @@
         [debateTimerField setTextColor:[NSColor blueColor]];
     }
     if (_speechTime < .1){
-        [toggleButton setEnabled:NO];
-        [setCXButton setEnabled:YES];
-        [setConstructiveButton setEnabled:YES];
-        [setRebuttalButton setEnabled:YES];
-        [affPrepRemaining setEnabled:YES];
-        [negPrepRemaining setEnabled:YES];
+        [self releaseButtons];
+
+        toggleButton.enabled=NO;
         
         [debateTimerField setTextColor:[NSColor blackColor]];
         
@@ -262,15 +216,26 @@
                             [NSURL fileURLWithPath:path] error:NULL];
     audio.delegate = self;
     [audio play];
+    [audio autorelease];
     
 }
 
+-(void)hijackButtons{
+    [_hijackableButtons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj setEnabled:NO];
+    }];
+}
 
+
+-(void)releaseButtons{
+    [_hijackableButtons enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [obj setEnabled:YES];
+    }];
+}
 
 -(void)dealloc{
     [_timer release];
-    [hijackableButtons dealloc];
-    [AVAudioPlayer release];
+    [_hijackableButtons dealloc];
     
     [super dealloc];
 }

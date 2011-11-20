@@ -23,11 +23,13 @@
     
     double _speechTime, _affPrep, _negPrep;
     
-    NSSet *hijackableButtons;
+    NSArray *_hijackableButtons;
     
 }
 
 @property (nonatomic, retain) NSString *convertedTimeString;
+
+@property (nonatomic, retain) IBOutlet NSArray *hijackableButtons;
 
 @property double speechTime, affPrep, negPrep;
 
@@ -48,6 +50,11 @@
 -(void)tossGrowlMessage;
 -(void)timesUpGrowlMessage;
 -(void)timesUpNoise;
+
+
+
+-(void)hijackButtons;
+-(void)releaseButtons;
 
 
 @end
