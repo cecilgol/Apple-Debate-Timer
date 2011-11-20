@@ -45,7 +45,7 @@
 			<object class="NSWindowTemplate" id="1005">
 				<int key="NSWindowStyleMask">7</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{0, 373}, {495, 190}}</string>
+				<string key="NSWindowRect">{{0, 0}, {495, 190}}</string>
 				<int key="NSWTFlags">544735232</int>
 				<string key="NSWindowTitle">High School Debate Timer</string>
 				<string key="NSWindowClass">NSWindow</string>
@@ -529,6 +529,8 @@
 					<string>-1.IBPluginDependency</string>
 					<string>-2.IBPluginDependency</string>
 					<string>-3.IBPluginDependency</string>
+					<string>1.IBNSWindowAutoPositionCentersHorizontal</string>
+					<string>1.IBNSWindowAutoPositionCentersVertical</string>
 					<string>1.IBPluginDependency</string>
 					<string>1.IBWindowTemplateEditedContentRect</string>
 					<string>1.NSWindowTemplate.visibleAtLaunch</string>
@@ -556,6 +558,8 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<boolean value="YES"/>
+					<boolean value="NO"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{357, 418}, {480, 270}}</string>
 					<integer value="1"/>
@@ -693,6 +697,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>affPrepRemaining</string>
 							<string>debateTimerField</string>
+							<string>hijackableButtons</string>
 							<string>negPrepRemaining</string>
 							<string>setCXButton</string>
 							<string>setConstructiveButton</string>
@@ -703,6 +708,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSButton</string>
 							<string>NSTextField</string>
+							<string>NSArray</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
 							<string>NSButton</string>
@@ -716,6 +722,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>affPrepRemaining</string>
 							<string>debateTimerField</string>
+							<string>hijackableButtons</string>
 							<string>negPrepRemaining</string>
 							<string>setCXButton</string>
 							<string>setConstructiveButton</string>
@@ -731,6 +738,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">debateTimerField</string>
 								<string key="candidateClassName">NSTextField</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">hijackableButtons</string>
+								<string key="candidateClassName">NSArray</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">negPrepRemaining</string>
