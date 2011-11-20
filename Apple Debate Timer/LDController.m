@@ -26,7 +26,7 @@
     [GrowlApplicationBridge setGrowlDelegate:self];
     [self registrationDictionaryForGrowl];
     
-    self.hijackableButtons = [NSArray arrayWithObjects:setACButton, setNCButton, set1ARButton, setNRButton, set2ARButton, nil];
+    self.hijackableButtons = [NSArray arrayWithObjects:setACButton, setNCButton, set1ARButton, setNRButton, set2ARButton,affPrepRemaining,negPrepRemaining,setCXButton,toggleButton, nil];
     
     [toggleButton setEnabled:NO];
     
