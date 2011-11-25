@@ -158,6 +158,8 @@
         
         [self hijackButtons];
         
+        [toggleButton setEnabled:NO];
+        
         [sender setTitle:@"Stop Prep"];
         [sender setEnabled:YES];
     }
@@ -179,6 +181,8 @@
         [_timer startTimer];
         
         [self hijackButtons];
+        
+        [toggleButton setEnabled:NO];
         
         [sender setTitle:@"Stop Prep"];
         [sender setEnabled:YES];

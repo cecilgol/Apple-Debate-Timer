@@ -96,19 +96,20 @@
     if([_timer isRunning]){
         [_timer stopTimer];
         
-        [self releaseButtons];
-        
         [affPrepRemaining setTitle:[NSString stringWithFormat:@"Aff Prep: %@",[Utilities convertTimeString:_speechTime]]];
         self.affPrep = _speechTime;
         
+        [self releaseButtons];
         
     }else{
         _timer.speechTime = self.affPrep;
         [debateTimerField setTextColor:[NSColor blackColor]];
-
+        
         [_timer startTimer];
         
         [self hijackButtons];
+        
+        [toggleButton setEnabled:NO];
         
         [sender setTitle:@"Stop Prep"];
         [sender setEnabled:YES];
@@ -119,19 +120,20 @@
     if([_timer isRunning]){
         [_timer stopTimer];
         
-        [self releaseButtons];
-        
         [negPrepRemaining setTitle:[NSString stringWithFormat:@"Neg Prep: %@",[Utilities convertTimeString:_speechTime]]];
         self.negPrep = _speechTime;
         
+        [self releaseButtons];
         
     }else{
         _timer.speechTime = self.negPrep;
         [debateTimerField setTextColor:[NSColor blackColor]];
-
+        
         [_timer startTimer];
         
         [self hijackButtons];
+        
+        [toggleButton setEnabled:NO];
         
         [sender setTitle:@"Stop Prep"];
         [sender setEnabled:YES];

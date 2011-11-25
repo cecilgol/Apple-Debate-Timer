@@ -368,7 +368,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Growl.framework/Versions/A\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				PRODUCT_NAME = "Debate Timer for Mac";
 				STRIP_INSTALLED_PRODUCT = NO;
 				STRIP_STYLE = all;
@@ -393,7 +393,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Growl.framework/Versions/A\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Debate Timer for Mac";
 				STRIP_INSTALLED_PRODUCT = NO;
